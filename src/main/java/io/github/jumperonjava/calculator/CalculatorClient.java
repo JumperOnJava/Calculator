@@ -21,7 +21,7 @@ public class CalculatorClient implements ClientModInitializer{
     }
 
     private void regCommand(CommandDispatcher<FabricClientCommandSource> dispatcher, CommandRegistryAccess registryAccess) {
-        var builder = literal("cal").then(
+        var builder = literal("calc").then(
                 argument("expression",StringArgumentType.greedyString()).executes(this::calculate)
         ).executes(this::failNoExp);
         dispatcher.register(builder);
